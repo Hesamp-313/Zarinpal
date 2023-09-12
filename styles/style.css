@@ -1,0 +1,940 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    font-family: 'iranyekanwebmedium',Arial, Helvetica, sans-serif;
+}
+
+
+
+/* نکته این قسمت پوزیشن استیکی است */
+/* نکته دوم استفاده از بک دراپ فیلتر و استفاده بلور */
+.header{
+    display: flex;
+    justify-content: space-between;
+    width:1170px ;
+    margin: auto;
+    align-items: center;
+    background-color: rgba(255, 255,255, 0.72);
+    position: sticky;                                           
+    backdrop-filter: blur(20px);
+    top: 0;
+    transition: all 0.3s ease;
+    border-bottom: 0.3px solid rgb(221, 214, 214);
+}
+
+
+
+.logo{
+    margin:11px 28px ;
+}
+
+nav ul li{
+    display: inline;
+    padding: 1rem;
+    font-size: 14px;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #303030;
+    cursor: pointer;
+}
+
+
+
+
+.ss a{
+   color: #28457b;
+   background-color: rgb(232, 239, 254,0.6);
+   border-radius: 20px;
+   padding: 10px 27px;
+   margin-right: 20px;
+   font-family: 'YekanBakhBold';
+} 
+
+nav ul li:last-child a:hover{
+   background-color: #fbf6d9;
+   transition: all 0.5s ;
+ } 
+
+
+
+/* بجای گریدینت از بگ کراند ار جی بی ای استفاده کنیم */
+.home{
+    width: 80%;
+    background: linear-gradient(rgb(65, 65, 229 ,rgb(218, 101, 101)));
+    height: 600px;
+    border-radius: 15px;
+}
+
+
+
+
+/*  برای اینکه فلش دراپ دون کوچک شود فلکس میکنیم به شرطی که یو ال هم فلکس باشد*/
+.more-menu{
+    display: flex;
+}
+.more-menu img{
+    width: 8px;
+}
+
+
+
+.hamburger-icon{
+    width: 27px;
+    display: none;
+}
+ 
+
+
+/* hambergur menu section which is display none in default mode 
+transform is important
+*/
+.hamburger-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    font-family:iranyekanwebmedium ;
+    transform: translateY(-100%);
+}
+
+.cross-icon{  
+    text-align: left;
+    padding: 20px 25px;
+}
+
+.hamburger-menu-items{
+    padding: 20px 30px;
+}
+
+.hamburger-menu-items li{
+    list-style-type: none;
+}
+
+.hamburger-menu-items div{
+    height: 1px;
+    width: 90%;
+    margin: 8px 0;
+    display: inline-block;
+    background-color: #dfe1e4; 
+}
+
+.more-item{
+    display: flex;
+    background-color: #eee;
+    padding: 20px 50px;
+
+}
+
+.more-item a{
+    text-decoration: none;
+    color: #28457b;
+    font-size: 0.85rem;
+}
+
+.more-item img{
+    margin: 5px;
+    width: 15px;
+    font-family: YekanBakhHeavy;
+}
+
+
+
+
+
+
+/* قسمت انیمیشن همبرگر منو خیلی مهم استفاده از ترنسفورم برای دیده شدن و اپسیتی */
+.show-hamburger-menu{
+    animation: fadeInDown 0.35s forwards;
+}
+
+@keyframes fadeInDown {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* برای قسمت محصولات در نوبار
+
+ نکات مهم: استفاه از سلکتور ها استفاده از گپ و پوزیشن ها
+ 
+*/
+#show-product-menu{
+    position: relative;
+}
+.product-menu {
+    position: absolute;
+    top: 0;
+    left: -135px;
+    margin-top:40px;
+    background-color: #fff;
+    border-top: solid 5px #f8e88b;
+    border-radius: 12px;
+    width: 372px;
+    gap: 10px;
+    display: none;
+    padding: 1rem;
+}
+.product-menu div a{
+    padding: 1.2rem;
+    display: block; 
+    /* این دیس پلی بلاک  بخاطر اینه تگ آ خودش
+     اینلاینه و در هاور نصفه بگ گراند میگیره */
+}
+.product-menu div a:hover{
+    background-color: rgba(232,239,254, .6);
+    border-radius: 12px;
+}
+.product-menu a p:first-child{
+    color: #000;
+    font-size: 0.95rem;
+}
+.product-menu a p:last-child{
+    color: #000;
+    font-size: .8rem;
+}
+
+
+
+
+
+
+
+/* برای قسمت بیشتر در نوبار 
+
+نکات مهم :پوزیشن دادن ها ,استفاده از سلکتور ها و وابسته بودن انیمیشن در جاوا اسکریپت
+*/
+#show-more-menu{
+    position: relative;
+}
+#show-more-menu ul{
+    position: absolute;
+    top: 0;
+    left: -35px;
+    background-color: #fff;
+    border-top: solid 5px #f8e88b;
+    border-radius: 12px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    list-style-type: none;
+    width: 137px;
+    display: none;
+    flex-direction: column;
+}
+#show-more-menu li{
+    font-family: iranyekanwebregular;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: .8rem;
+    color: black;
+}
+#show-more-menu li:hover{
+    background-color:rgba(232,239,254, .6);
+}
+
+@keyframes showUp {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.banner{
+    width: 1050px;
+    margin: 20px auto;
+    display: flex;
+    background-image: linear-gradient(135deg, #21254e, #2b4a83);
+    border-radius: 20px;
+    padding: 124px 60px 80px;
+    justify-content: space-between;
+}
+.banner-text h3{
+ color: #fff;
+ font-size: 2rem;
+ font-family: YekanBakhHeavy ;
+}
+
+.banner-text p{
+    color: #fff;
+    font-size: 1.15rem;
+    margin: 25px 5px;
+   }
+   
+   .banner-button {
+     margin-top:60px ;
+   }
+   
+   .registor{
+     text-decoration: none;
+     color: black;
+     background-color: #ffd900;
+     border-radius: 10px;
+     border: none;
+     padding: 6px 14px;
+     margin-left: 10px;
+     font-family: YekanBakhBold;
+   }
+   .login{
+    text-decoration: none;
+    color: #fff;
+    background-color: #435a8a;
+    border-radius: 10px;
+    border: none;
+    padding: 7px 14px;
+    font-family: YekanBakhBold;
+  }
+
+.banner-image img{
+    width: 500px;
+}
+
+.go-down{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 58px;
+}
+/* رلتیو در اینجا مهم و نکته */
+.go-down img {
+    width: 15px;
+    position: relative;
+    bottom: 60px;
+    cursor: pointer;
+    /* خیلی مهم این بخش  */ 
+}
+
+.go-down div{
+    background-image: url(../images/arrowbottom.svg) ;
+    width: 164px;
+    height: 78px;
+    /* در اینجا برای اینکه بشه فلشمون رو بندازیم توی بخش سفید به خود فلش پوزیشن رلتیو میدیم و بعد باتم میدیم */
+}
+
+
+
+
+
+.payment{
+    display: flex;
+    margin: 0 ;
+    gap: 120px;
+    width:1150px;
+}
+
+
+.parag{
+    padding: 25px 0;
+    line-height: 3.3rem;
+    margin-top: 10px;
+    border-bottom: solid rgb(235, 231, 231) 1px;
+}
+
+.parag h4{
+ color: gray;
+ font-size: 1rem;
+}
+
+.parag h2{
+    font-size: 1.3rem;
+}
+
+.parag p{
+    color: rgb(94, 94, 94);
+    font-family: YekanBakhHeavy;
+    text-align: justify;
+    font-size: 1rem;
+   }
+   
+   .payment-btn{
+    padding: 35px 0;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+   }
+
+   .payment-btn a{
+    text-decoration: none;
+   }
+
+   .build{
+    color: #000;
+    background-color: #ffd900;
+    padding: 13px;
+    border-radius: 10px;
+    
+   }
+
+.more-info{
+ color: #27457d;
+background-color: rgba(232,239,254,0.7);
+padding: 13px ;
+border-radius: 10px;
+display: block;
+}
+
+.arrow-btn a{
+display: flex;
+gap: 7px;
+justify-content: center;
+}
+   
+
+
+.pay-sec{
+margin-right: 2.7rem;
+}
+
+
+.payment-copy{
+    display: flex;
+    margin-right: 3rem;
+    gap: 170px;
+    width:1150px;
+    margin-top: 4rem;
+}
+
+.parag-copy{
+    padding: 25px 0;
+    line-height: 2.4rem;
+    margin-top: 4.9rem;
+    border-bottom: solid rgb(235, 231, 231) 1px;
+    width: 500px;
+}
+
+.parag-copy h4{
+    color: gray;
+    font-size: 1rem;
+   }
+   
+   .parag-copy h2{
+       font-size: 1.3rem;
+   }
+   
+   .parag-copy p{
+       color: rgb(94, 94, 94);
+       font-family: YekanBakhHeavy;
+       text-align: justify;
+       font-size: 1rem;
+       line-height: 2.5rem;
+      }
+
+      .pay-img-copy{
+        margin-top: 0.4rem;
+      }
+
+
+     
+
+      .attributes{
+        display: flex;
+        width: 1170px;
+        margin: auto;
+        justify-content: center;
+      }
+
+      .defition{
+        width: 35%;
+        margin-top: 50px;
+      }
+
+      .defition h3 {
+        font-family: YekanBakhHeavy;
+        font-size: 2rem;
+      }
+      
+      .defition p{
+        width: 85%;
+        margin-top: 40px;
+        line-height: 40px;
+        font-size: 1rem;
+      }
+
+
+/* مهم بخش گرید بخصوص تمپلیت */
+      .items {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        width: 60%;
+        padding: 30px;
+      }
+
+      .items img{
+        width: 60px;
+        height: 60px;
+      }
+
+      .items .item{
+        padding: 18px 25px 20px 0;
+      }
+      
+      .items .item div{
+        display: flex;
+        align-items: center;
+      }
+
+      .items h4{
+        font-size: 1.5rem;
+        font-family: YekanBakhHeavy;
+        margin-right: 20px;
+      }
+
+      .items .item p{
+        margin: 20px 0 20px 10px;
+        font-size: 1rem;
+        font-family: YekanBakhMedium;
+        color: #303030;
+        line-height: 36px;
+        text-align: justify;
+      }
+
+     
+      .first-item{
+        border-left: 1px solid #e0e4e7;
+      }
+      .second-item{
+        border-bottom: 1px solid #e0e4e7;
+      }
+      .third-item{
+        border-left: 1px solid #e0e4e7;
+        border-top:  1px solid #e0e4e7;
+      }
+
+      
+      .start-box{
+        width: 1170px;
+        height: 220px;
+        margin: auto;
+        margin-top: 50px;
+        border: 1px solid silver;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .start-box h4{
+        font-size: 1.7rem;
+        font-family:YekanBakhHeavy ;
+      }
+      .start-box p {
+        font-family: YekanBakhMedium;
+        font-size: 1.4rem;
+        color: #747480;
+        margin-top: 10px;
+        line-height: 4.3rem;
+      }
+     
+      .start-box a{
+        text-decoration: none;
+        font-family: iranyekanwebmedium;
+        font-size: 0.9rem;
+        min-height: 28px;
+        line-height: 28px;
+        padding: 4px 14px;
+        color: #000;
+        border-radius: 10px;
+        background-color: #ffd900;
+      }
+
+   
+     .support{
+        width: 1110px;
+        height: 70px;
+        padding: 0 30px;
+        margin: 30px auto ;
+        background-color: #fbfbf1;
+        border-radius: 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     } 
+
+     .support-number{
+        font-family: YekanBakhHeavy;
+        font-size: 1.3rem;
+     }
+
+     .line{
+        margin:0 15px ;
+     }
+     .num{
+        color: #21254e;
+     }
+
+    .support-request{
+        display: flex;
+        color:#21254e ;
+        font-family: YekanBakhBold;
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+    .support-request img{
+        width: 20px;
+    }
+
+
+
+    footer{
+        width: 1170px;
+        padding-top: 1.5rem;
+        margin: auto;
+        padding-bottom: 10rem;
+    }
+
+    .footer-links{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-links ul{
+        list-style-type: none;
+    }
+    
+    .footer-links ul a{
+        text-decoration: none;
+        color: #000;
+    }
+ 
+    .footer-links p{
+        font-size: 1.2rem;
+        font-family: YekanBakhHeavy;
+    }
+
+    .div-img{
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 20px 0;
+    }
+    .back-img{
+        width: 40px;
+        height: 40px;
+        background-color: #e0e3e9;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .right-side{
+        display: flex;
+        flex-direction: row;
+        justify-self: center;
+        gap: 45px;
+    }
+
+    .right-side ul{
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding-top: 2rem;
+    }
+    
+    .left-side{
+        padding-left: 5rem;
+    }
+    
+    .bell{
+        background-color: #2e82ff;
+        width: fit-content;
+        padding: 7px 7px 0;
+        border-radius: 50%;
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+    }
+    
+    .bell img{
+        width: 40px;
+    }
+
+
+@media (max-width: 1200px) {
+    .header{
+        width: 940px;   
+    } 
+    .banner{
+        width:900px ;
+        padding: 60px 40px 120px; 
+    }
+    .banner-image img{
+        width: 430px;
+    }
+    .payment{
+        width: 940px;
+        gap: 40px;
+       margin: 0 auto;
+    }
+    .payment-copy{
+        width: 940px;
+        gap: 40px;
+       margin: 0 auto;
+    }
+   .attributes{
+    width: 924px;
+    padding: 0 8px;
+    flex-direction: column;
+   }
+   .defition{
+    width: 100%;
+    margin-top: 40px;
+   }
+   .defition p{
+    width: 100%;
+    margin-top: 30px;
+   }
+   .first-item ,.second-item ,.third-item {
+    border: none;
+   }
+   .items {
+    width: 90%;
+    padding: 30px;
+   }
+   .items .item {
+    padding: 18px 0 20px 50px;
+   }
+   .start-box{
+    width: 924px;
+   }
+   .support{
+    width: 880px;
+   }
+   .support-number,.support-request{
+    font-size: 1.1rem;
+   }
+   footer{
+    width: 940px;
+   }
+}
+
+@media (max-width: 990px) {
+    .header{
+        width: auto;
+        padding:20px 60px;
+    }
+    nav ul li:last-child{
+        display: none;
+    }
+    .logo{
+        margin: 0;
+    }
+     .li{
+        margin:0 10px ;
+    }
+    .banner{
+        width: auto;
+        padding: 40px 40px 85px;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .banner-image img{
+        display: none;
+    }
+    .banner-text {
+        text-align: center;
+    }
+    .banner-text p {
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+    .banner-button{
+        margin-top: 50px;
+    }
+    .parag-copy{
+        margin-top: 0;
+        width: 810px;
+    }
+    .payment , .pay-sec , .payment-copy{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 820px;
+    }
+    .attributes{
+        width: auto;
+        pad: 0 30px;
+    }
+    .start-box{
+        margin: 0 38px;
+        width: calc(100% - 76px);
+    }
+    .support{
+        width:calc(100% - 120px) ;
+    }
+    .support-number,.support-request{
+        font-size: .9rem;
+       }
+    .footer-links{
+        flex-direction: column;
+    }
+    .div-img{
+        justify-content: start;
+    }
+    .left-side{
+        padding-top: 3rem;
+    }
+    footer {
+        width: calc(100% - 60px);
+    }
+
+    .right-side{
+       gap: 90px;
+    }
+   
+}
+
+@media (max-width: 835px) {
+    .li{
+        display: none;     
+    }
+    .hamburger-icon{
+       display: block;
+    }
+    .header{
+        width: auto;
+        padding: 10px 8px;
+    }
+    .banner{
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .payment ,.payment-copy{
+        width: 550px;
+    }
+    
+    .parag , .parag-copy{
+        text-align: center;
+    }
+    .parag-copy{
+        margin: 0 auto;
+        margin-top: 0;
+        width: auto;
+    }
+    .payment-btn{
+        display: flex;
+        justify-content: center;
+    }
+    .defition{
+        text-align: center;
+        margin-top: 90px;
+    }
+    .defition h3{
+        font-size: 1.6rem;
+    }
+    .items{
+        width: 100%;
+        padding: 50px 0;
+    }
+    .items .item{
+        padding: 18px 0 20px 20px;
+    }
+    .start-box{
+        margin:  0 8px;
+        width: calc(100% - 16px);
+    }
+    .support{
+        flex-direction: column;
+        align-items: flex-start;
+        background:none ;
+    }
+    .support-request{
+        background-color: #fbf6f1;
+        padding: 5px 20px;
+        border-radius: 35px;
+        margin-top: 20px;
+    }
+    .right-side{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .right-side ul {
+        padding-top: 1rem;
+    }
+    footer{
+        width: calc(100% - 120px);
+    }
+    
+}
+
+@media (max-width:550px) {
+    .banner{
+        padding: 80px 40px;
+    }
+    .banner-text h3{
+        font-size: 1.2rem;
+        text-align: right;
+    }
+    .banner-text p {
+        text-align: justify;
+    }
+    .pay-img ,.pay-img-copy {
+        display: none;
+    }
+    .payment ,.payment-copy{
+        width: 320px;
+    }
+    
+    .parag p{
+        text-align: center;
+    }
+    .parag-copy p {
+        text-align: center;
+        line-height: 3.4rem;
+    }
+    .items {
+        padding: 50px 0;
+        grid-template-columns: 1fr;
+    }
+    .items .item {
+        padding: 18px 0;
+    }
+    .start-box{
+        height: 180px;
+    }
+    .start-box h4{
+        font-size: 1.2rem;
+    }
+    .start-box p {
+       font-size: 1rem;
+    }
+   .support{
+    width: calc(100 - 60px);
+    padding: 0;
+    margin: 50px 30px;
+   }
+   .support-number,.support-request{
+    font-size: .7rem;
+   }
+   .left-side{
+    justify-content: center;
+   } 
+   .footer-links a , .footer-links p{
+     font-size: .9rem;
+   }
+}
